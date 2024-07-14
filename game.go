@@ -104,20 +104,20 @@ func (g *game) draw() {
 	terminal.Draw(speed)
 
 	terminal.MoveCursor(g.food)
-	terminal.Draw("*")
+	terminal.Draw("\033[33m*\033[0m")
 
 	for _, pos := range g.walls {
 		terminal.MoveCursor(pos)
-		terminal.Draw("#")
+		terminal.Draw("\033[31m#\033[0m")
 	}
 
 	for i, pos := range g.snake.body {
 		terminal.MoveCursor(pos)
 
 		if i == 0 {
-			terminal.Draw("O")
+			terminal.Draw("\033[32mO\033[0m")
 		} else {
-			terminal.Draw("o")
+			terminal.Draw("\033[32mo\033[0m")
 		}
 	}
 
