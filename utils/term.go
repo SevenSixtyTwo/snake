@@ -34,6 +34,11 @@ func ReturnEcho() {
 
 func Clear() {
 	fmt.Fprint(screen, "\033[2J")
+
+	// cmd := exec.Command("clear")
+	// cmd.Stdin = os.Stdin
+	// cmd.Stdout = os.Stdout
+	// cmd.Run()
 }
 
 func Draw(str string) {
@@ -45,6 +50,7 @@ func Render() {
 }
 
 // top left position is 1:1
+// return: width, height
 func GetSize() (int, int) {
 	width, height, err := term.GetSize(int(os.Stdout.Fd()))
 	if err != nil {

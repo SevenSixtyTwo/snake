@@ -21,6 +21,7 @@ const (
 	start
 )
 
+// true if positions are same
 func positionsAreSame(a, b position) bool {
 	return a[0] == b[0] && a[1] == b[1]
 }

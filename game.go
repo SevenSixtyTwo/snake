@@ -44,7 +44,7 @@ func newGame() *game {
 	for i := 0; i < wallsCount; i++ {
 		newWall := randomPosition()
 		for _, pos := range walls {
-			for positionsAreSame(newWall, pos) {
+			for positionsAreSame(newWall, pos) && newWall[1] < 2 {
 				newWall = randomPosition()
 			}
 		}
@@ -52,9 +52,8 @@ func newGame() *game {
 	}
 
 	food := randomPosition()
-
 	for _, pos := range walls {
-		for positionsAreSame(food, pos) {
+		for positionsAreSame(food, pos) && food[1] < 2 {
 			food = randomPosition()
 		}
 	}
