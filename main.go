@@ -23,6 +23,9 @@ func main() {
 			newHeadPos[1]++
 		case west:
 			newHeadPos[0]--
+		case start:
+			game.draw()
+			continue
 		}
 
 		// if you hit the wall, game over

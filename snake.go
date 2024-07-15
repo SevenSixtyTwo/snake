@@ -13,6 +13,6 @@ func newSnake() *snake {
 
 	return &snake{
 		body:      []position{pos},
-		direction: north,
+		direction: start,
 	}
 }

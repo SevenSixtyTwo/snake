@@ -26,9 +26,10 @@ func newGame() *game {
 
 	snake := newSnake()
 
+	wallsCount := 20
 	var walls []position
 
-	for i := 0; i < 10; i++ {
+	for i := 0; i < wallsCount; i++ {
 		newWall := randomPosition()
 		for _, pos := range walls {
 			for positionsAreSame(newWall, pos) {

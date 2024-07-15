@@ -18,6 +18,7 @@ const (
 	east
 	south
 	west
+	start
 )
 
 func positionsAreSame(a, b position) bool {
