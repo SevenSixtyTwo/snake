@@ -26,8 +26,20 @@ func newGame() *game {
 
 	snake := newSnake()
 
+	width, height := terminal.GetSize()
+
 	wallsCount := 20
 	var walls []position
+
+	for i := 0; i < width; i++ {
+		walls = append(walls, position{i, 2})
+		walls = append(walls, position{i, height})
+	}
+
+	for i := 2; i < height; i++ {
+		walls = append(walls, position{0, i})
+		walls = append(walls, position{width, i})
+	}
 
 	for i := 0; i < wallsCount; i++ {
 		newWall := randomPosition()
