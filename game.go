@@ -192,6 +192,8 @@ func (g *game) listenForKeyPress() {
 				g.speed -= velocityChange
 			}
 			g.snake.direction = west
+		case ' ':
+			g.snake.direction = start
 		}
 	}
 }
